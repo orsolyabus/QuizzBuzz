@@ -1,0 +1,33 @@
+
+<main class="mx-4">
+<span><b>Leaderboard score: <%= @current_user_total_score %></b></span> 
+
+<% if @completed_quiz == [] %>
+  <div class="row justify-content-center">
+      <%= image_tag "sad_bee.png"%>
+  </div>
+      <p class="text-center">Your quiz list is so sad and lonely, why don't you take a quiz now?</p>
+<% end %>
+  <div class="container">  
+    <div class ="row justify-content-md-center" id="quiz-created">
+      <% @completed_quiz.each do |q| %>
+        <div class="col-lg-4 col-sm-12 col-md-6" id=<%= q.id %>>
+          <div class="card m-2 container-fluid p-0 card-shadow">
+            <div class="card-header bg-taken-dark">
+              <h5 class="card-title"><%= link_to q.title.slice(0, 50), quiz_path(q), :class=>"text-dark" %></h5>
+            </div>
+            <div class="card-body bg-taken-light">          
+              <p class="card-text"><%= q.description.slice(0, 100)%>...</p>  
+              <small class="text-muted">
+                Score: <%= @taken_quizzes.find_by(quiz_id: q.id).score %> / <%= Quiz.find(q.id).questions.length %>
+              </small>      
+            </div>
+          </div>
+        </div>    
+      <% end %>
+    </div>
+    <div class="row justify-content-center">
+      <%= link_to('Take more quizzes', quizzes_path, class: "btn btn-outline-primary text-center m-4") %>
+    </div>
+  </div>    
+</main>

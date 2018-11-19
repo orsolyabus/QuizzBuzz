@@ -1,0 +1,28 @@
+
+<div class="mx-2">
+<h3> Welcome <%= @user.nickname.titleize %>!</h3>
+<br>
+
+<div class="card" >
+  <div class="card-body">
+    <h4 class="card-title"><%= @user.first_name.titleize %> <%= @user.last_name.titleize %></h4>
+    <p class="card-text"> Username: <%= @user.nickname.titleize %></p>
+    <p class="card-text"> Email: <%= @user.email %></p>
+
+    <a href="<%=completed_quizzes_path%>"
+    class="btn btn-primary"> Quizzes completed <span class="badge badge-light"> <%=@total_taken_quizzes%></span></a>
+
+    <a href="<%=created_quizzes_path(current_user)%>"
+    class="btn btn-secondary m-2"> Quizzes created <span class="badge badge-light"> <%=@total_created_quizzes %></span></a>
+
+    <a href="<%=leaderboard_path%>"
+    class="btn btn-info"> Total Points <span class="badge badge-light"> <%=@total_score %></span></a>
+  </div>
+</div>
+
+<br>
+<div class="mx-2">
+<%= link_to('Edit Profile', edit_user_path(@user), class: "btn btn-outline-primary")%>
+<%= link_to('Delete Account', user_path(@user), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-primary") %>
+</div>
+

@@ -1,0 +1,6 @@
+# Create a copy of this in this directory
+# that removes `.example` from it, then replace
+# the relevant text below.
+
+ENV["EMAIL_USERNAME"] = "hotcakesforlunch@gmail.com"
+ENV["EMAIL_PASSWORD"] = "fefifofum"

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row small-row-reverse">
+      <div class="col-sm-12 col-lg-2 col-xl-2">
+      </div>
+      <div class="col-sm-12 col-lg-4 col-xl-4 text-remove-padding">
+        <h1 class="display-4 text-justify-lg  text-justify-sm py-2-xs py-0-md">Welcome to <span class="text-primary">QuizzBuzz</span>!</h1>
+        <p class="lead text-justify-lg  text-justify-sm py-2-xs py-0-md">It's time to get your quizz on! Create your own quizzes and challenge other players!</p>
+        <p class="lead text-justify-lg  text-justify-sm py-2-xs py-0-md">
+          <%= link_to( "Log In", new_sessions_path, class: "btn btn-primary btn-lg mr-4") %>
+          <%= link_to( "Sign Up", new_user_path, class: "btn btn-primary btn-lg" )%>
+        </p>
+      </div>
+      <div class="col-sm-12 col-lg-6 col-xl-6">
+        <%= image_tag "undraw_app_installation_mbdv copy.png", class: "img-fluid"%>
+      </div>
+    </div>
+  </div>
+</div>

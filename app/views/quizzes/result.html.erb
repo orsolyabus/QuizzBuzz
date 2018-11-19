@@ -1,0 +1,20 @@
+<h1 class="mx-2">Your results for <%= @quiz.title %></h1>
+
+<p class="mx-2"><%= @quiz.description %></p>
+<p class="mx-2">Created by: <%= @quiz.user&.first_name %></p>
+
+<div class="mx-2">
+  <%= form_for @result do |form| %>
+    <% @quiz.questions.each do |q| %>
+      <p><strong><%= q.question %></strong></p>
+        <div class="form-group" id='answer-options'>
+          <%= form.radio_button :"#{q}", q.option0, class: "form-control" %> A: <%= q.option0 %>
+          <%= form.radio_button :"#{q}", q.option1, class: "form-control" %> B: <%= q.option1 %>
+          <%= form.radio_button :"#{q}", q.option2, class: "form-control" %> C: <%= q.option2 %>
+          <%= form.radio_button :"#{q}", q.option3, class: "form-control" %> D: <%= q.option3 %>
+        </div>
+    <% end %>
+  <% end %>
+</div>
+
+

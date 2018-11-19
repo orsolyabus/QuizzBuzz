@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+//  $theme-colors: (
+//   "primary":    #3494D6,
+//   "secondary":  #EB7E5B,
+//   // "success":    #,
+//   "info":       #99C5E6,
+//   // "warning":    #,
+//   // "danger":     #,
+//   "light":      #F6F7F7,
+//   "dark":       #578078
+// );
+
+$theme-colors: (
+  "primary":   #BD485A,
+  "secondary":  #B47796,
+  "success":    #6e9053,
+  "info":       #9B8EA6,
+  "warning":    #eb801b,
+  "danger":     #f44336,
+  "light":      #F4F7F5,
+  "dark":       #420C0E,
+  "all-dark":#be4759,
+  "all-light":#be47596e,
+  "taken-dark": #d39ba9,
+  "taken-light": #d39ba948,
+  "created-dark": #9B8EA6,
+  "created-light": rgba(155, 142, 166, 0.349),
+);
+
+#quiz-index .card {
+  height: 220px;
+}
+
+#quiz-index .card-header {
+  height: 100px;
+}
+
+#quiz-index .card-title {
+  text-align: center;
+}
+#quiz-completed .card {
+  height: 220px;
+}
+
+#quiz-completed .card-header {
+  height: 100px;
+}
+
+#quiz-completed .card-title {
+  text-align: center;
+}
+#quiz-created .card {
+  height: 220px;
+}
+
+#quiz-created .card-header {
+  height: 100px;
+}
+
+#quiz-created .card-title {
+  text-align: center;
+}
+
+.card-shadow {
+  box-shadow: 2px 4px 18px #888888
+}
+
+nav a {
+  color: #F4F7F5;
+}
+
+nav a:hover {
+  color: pink;
+}
+
+.navbar-brand > img {
+  max-height: 40px;
+}
+
+@import "bootstrap";
+@import "main";

@@ -1,0 +1,33 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron {
+  background-color: unset !important;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .text-justify-lg {
+    text-align: left;
+  }
+}
+
+@media (max-width: 991px){
+  .small-row-reverse {
+    flex-direction: column-reverse;
+  }
+
+  .text-justify-sm {
+      text-align: center;
+  }
+
+  .jumbotron {
+    padding-top: 0px !important;
+  }
+
+  .text-remove-padding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}

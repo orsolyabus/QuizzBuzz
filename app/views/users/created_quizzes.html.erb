@@ -1,0 +1,36 @@
+
+<main class="mx-4"> 
+
+<% if @created_quiz == [] %>
+  <div class="row justify-content-center">
+    <%= image_tag "sad_bee.png" %>
+  </div>
+  <p class="text-center">You haven't created any quizzes. Your list is so sad and lonely, why don't you make a new one?</p>
+<% end %>
+  <div class="container">  
+    <div class ="row justify-content-md-center" id="quiz-completed">
+      <% @created_quiz.each do |q| %>
+        <div class="col-lg-4 col-sm-12 col-md-6">
+          <div class="card m-2 container-fluid p-0 card-shadow">
+            <div class="card-header bg-created-dark">
+              <h5 class="card-title"><%= link_to q.title.slice(0, 50), quiz_path(q), :class=>"text-dark" %></h5>
+            </div>
+            <div class="card-body bg-created-light"> 
+              <p class="card-text">Times taken: <%= q.quiz_taker.count %> attempts</p>  
+              <p class="card-text">Highest score: 
+                <% if q.quiz_taker == [] %>
+                  No scores yet!
+                <% else %>
+                  <%= q.quiz_taker.maximum(:score) %> points
+                <% end %>
+              </p>  
+            </div>
+          </div>
+        </div>    
+      <% end %>
+    </div>
+    <div class="row justify-content-center">
+       <%= link_to('Create New Quiz', new_quiz_path, class: "btn btn-outline-primary m-4") %>
+    </div>
+  </div>   
+</main>

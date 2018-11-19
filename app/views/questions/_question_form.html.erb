@@ -1,0 +1,73 @@
+
+<div class="row d-flex justify-content-center">
+  <div class="col-xl-9 col-lg-10 col-md-11">
+  <%= form_for([@quiz, @question]) do |form| %>
+    <div class="form-group">
+        <%= form.label :question%> <br>
+        <%= form.text_area :question, class: "form-control", maxlength:"300", required: true %> 
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-2">
+        <label >Correct Answer</label>
+        <div class="form-check">
+        <%= form.radio_button :correct_answer, 0, class: "form-check-input", id: "A", required: true %>
+            <label class="form-check-label" for="A">A</label>
+        </div>
+        </div>
+        <div class="form-group col-md">
+        <label for="inputPassword4">Possible Answers</label>
+        <%= form.text_field :option0, class: "form-control", maxlength:"100", required: true %> 
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2">
+        <div class="form-check">
+        <%= form.radio_button :correct_answer, 1, class: "form-check-input", id: "A", required: true %>
+            <label class="form-check-label" for="B">B</label>
+        </div>
+        </div>
+        <div class="form-group col-md">
+        <%= form.text_field :option1, class: "form-control", maxlength:"100", required: true %> 
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2">
+        <div class="form-check">
+        <%= form.radio_button :correct_answer, 2, class: "form-check-input", id: "A", required: true %>
+            <label class="form-check-label" for="C">C</label>
+        </div>
+        </div>
+        <div class="form-group col-md">
+        <%= form.text_field :option2, class: "form-control", maxlength:"100", required: true %> 
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2">
+        <div class="form-check">
+        <%= form.radio_button :correct_answer, 3, class: "form-check-input", id: "A", required: true %>
+            <label class="form-check-label" for="D">D</label>
+        </div>
+        </div>
+        <div class="form-group col-md">
+        <%= form.text_field :option3, class: "form-control", maxlength:"100", required: true %> 
+        </div>
+    </div>
+
+     <div class="d-flex">
+        <div>
+          <%= form.submit "Save", class: "btn btn-primary m-2" %>
+        <% if @quiz.persisted?%>
+          <%= link_to("Cancel",  quiz_path(@quiz), class: "btn btn-secondary m-2")%>
+        <% end %>
+        </div>
+        <% if @question.persisted? %>
+          <div class="ml-auto">
+            <%= link_to('Delete', quiz_question_path(@quiz, @question), method: :delete, class: " m-2 btn btn-info", data: {confirm: "Are you sure?"}) %>
+          </div>
+        <% end %>
+      </div> 
+
+<% end %>
+</div>
+</div>

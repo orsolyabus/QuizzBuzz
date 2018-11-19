@@ -1,0 +1,71 @@
+
+<h1 class="text-center text-primary">QuizzBuzz!</h1>
+<div class="text-center">
+</div>
+<div class="card border border-dark" style="max-width: 900px; margin: auto;">
+  <div class="card-body">
+    <h3 class="text-center card-title text-dark"><%= @quiz.title %></h3>
+    <p class="text-center card-text text-dark m-0"><%= @quiz.description %></p>
+    <div class="text-center mb-2">
+      <em><small class="card-text text-dark">By: <%= @quiz.user.nickname %></small></em>
+    </div>
+    <% if can? :crud, @quiz %>
+      <div class="form-group ml-2 mt-2 justify-content-center d-flex">
+        <%= link_to('Edit Quiz', edit_quiz_path(@quiz), class: "mx-1 btn btn-outline-primary btn-sm")%>
+      </div>
+    <% end %>
+    <form action="/quizzes/<%= @quiz.id %>/results" method="POST">
+      <% @quiz.questions.each do |q| %>
+      <div class="d-flex justify-content-center" style="max-width: 1000px; height: 50%; margin: auto">
+        <div class="card bg-primary text-light shadow mb-4" style="width: 65%">
+          <div class="card-body m-0 form-group" id='answer-options'>
+            <h5 class="card-text"><%= q.question %></h5>
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">          
+            <div class="d-flex ml-2">
+              <input class="m-1" type="radio" id="opt0-<%=q.id%>" name='<%= q.id %>' value=0 required>
+              <label class="form-check-label ml-4 " for="opt0-<%=q.id%>"><%= q.option0 %></label>
+            </div>
+            <div class="d-flex ml-2">
+              <input class="m-1" type="radio" id="opt1-<%=q.id%>" name='<%= q.id %>' value=1>
+              <label class="form-check-label ml-4" for="opt1-<%=q.id%>"><%= q.option1 %></label>
+            </div>
+            <div class="d-flex ml-2">
+              <input class="m-1" type="radio" id="opt2-<%=q.id%>" name='<%= q.id %>' value=2'>
+              <label class="form-check-label ml-4" for="opt2-<%=q.id%>"><%= q.option2 %></label>
+            </div>
+            <div class="d-flex ml-2">
+              <input class="m-1" type="radio" id="opt3-<%=q.id%>" name='<%= q.id %>' value=3'>
+              <label class="form-check-label ml-4" for="opt3-<%=q.id%>"><%= q.option3 %></label>
+            </div>
+            <% if can? :crud, @quiz %>
+              <div class="mt-2">
+                <%= link_to('Edit', edit_quiz_question_path(@quiz, q), class: "btn btn-outline-primary bg-light")%>
+              </div>
+            <% end %>  
+          </div>
+          </div>
+
+          </div>
+ 
+       
+        <% end %>
+
+
+        <% if can? :take, @quiz %>
+          <div class="d-flex justify-content-center">
+            <input type="submit" value='Submit Answers' class='btn btn-primary'>
+          </div>
+          <% elsif !(can? :crud, @quiz) %>
+            <div class="mb-4 d-flex justify-content-center" style="width: 100%; height: 50%;">
+              <%= link_to 'Cannot Retake Quizzes', quizzes_path, class: 'btn btn-warning' %>
+            </div>
+      <% end %>
+    </form>
+    <% if can? :crud, @quiz %>
+      <div class="mb-4 d-flex justify-content-center" style="width: 100%; height: 50%;">
+        <%= link_to 'Add Questions', new_quiz_question_path(@quiz.id), class: 'btn btn-primary' %>
+        <%= link_to "Done", created_quizzes_path(current_user), class: "btn btn-info ml-2" %>
+      </div>
+    <% end %>
+  </div>
+</div>

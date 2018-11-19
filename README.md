@@ -1,24 +1,56 @@
-# README
+# QuizzBuzz
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Team Salmon presents: QuizzBuzz
 
-Things you may want to cover:
 
-* Ruby version
+## Summary
 
-* System dependencies
+Our project is a quiz website that will allow users to add and take quizzes that are added onto our site. All of the quizzes are community-generated. 
 
-* Configuration
+## Getting Started
 
-* Database creation
+Follow these instructions to get a copy of the project up and running on your local machine for development.
 
-* Database initialization
+## Installation
 
-* How to run the test suite
+Make a git clone of the repository, and then bundle:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle
+```
 
-* Deployment instructions
+Start the server with: 
+```bash
+rails s
+```
 
-* ...
+Log onto the server at http://localhost:3000.
+
+
+## Built With
+
+Ruby on Rails 
+
+## Contributors
+
+- [Rosa Diaz](https://github.com/rosadiaz)
+- [Daniel Hawkins](https://github.com/dockhands)
+- [Nicholas Chan](https://github.com/LeoBotti)
+- [Ronald Liu](https://github.com/rkkl1337)
+- [Orsolya Bus](https://github.com/orsolyabus)
+- [Chris Chu](https://github.com/chrischu5)
+
+## Screenshots
+
+![Home Landing Page](./app/assets/images/Screen1.png)
+
+![Quizzes Index Page](./app/assets/images/Screen2.png)
+
+![Quiz Show](./app/assets/images/Screen4.png)
+
+![Quiz Results Show](./app/assets/images/Screen5.png)
+
+## Acknowledgments
+
+Shout out to FizzBuzz
+

@@ -1,0 +1,61 @@
+    <%# ROUTE IS "/leaderboard" or leaderboard_path %>
+<div class="row d-flex justify-content-center">
+  <div class="col-xl-6 col-lg-9 col-md-11">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Rank</th>
+          <th scope="col">Nickname</th>
+          <th scope="col">Total Points </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"> 
+          <i style="color: gold;" class="fas fa-trophy"></i>
+          </th>
+          <td><%= User.find_by_id(@lb_results.first[0]).nickname %></td>
+          <td><%= @lb_results.first[1] %>
+        </tr>
+
+        <tr>
+          <th scope="row"> 
+          <i style="color: silver;" class="fas fa-trophy"></i>
+          </th>
+          <td><%= User.find_by_id(@lb_results.keys[1]).nickname %></td>
+          <td><%= @lb_results.values[1]%>
+        </tr>
+
+        <tr>
+          <th scope="row">  
+          <i style="color: #cd7f32;" class="fas fa-trophy"></i>
+          </th>
+          <td><%= User.find_by_id(@lb_results.keys[2]).nickname %></td>
+          <td><%= @lb_results.values[2]%>
+        </tr>
+
+        <% @index=4 %>
+        <% @lb_results.drop(3).each do |user, total_score| %>
+          <% if @index <= 20%>
+            <% if user == @current_user_id %>
+              <tr style="background-color: gold">
+                <th scope="row"> <%= @index%> </th>
+                <td><%= User.find_by_id(user).nickname %></td>
+                <td><%= total_score %>
+              </tr>
+              <% @index +=1 %>
+            <% else %>
+              <tr>
+                <th scope="row"> <%= @index%> </th>
+                <td><%= User.find_by_id(user).nickname %></td>
+                <td><%= total_score %>
+              </tr>
+              <% @index +=1 %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+           
