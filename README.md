@@ -11,13 +11,18 @@ Our project is a quiz website that will allow users to add and take quizzes that
 
 Follow these instructions to get a copy of the project up and running on your local machine for development.
 
-## Prerequisites
+## Installation
 
-Make a git clone of the repository.
+Make a git clone of the repository, and then bundle:
 
-Run the bundle command in the terminal.
+```bash
+bundle
+```
 
-Start the server with rails s.
+Start the server with: 
+```bash
+rails s
+```
 
 Log onto the server at http://localhost:3000.
 
@@ -35,6 +40,15 @@ Ruby on Rails
 - [Orsolya Bus](https://github.com/orsolyabus)
 - [Chris Chu](https://github.com/chrischu5)
 
+## Screenshots
+
+![Home Landing Page](./app/assets/images/Screen1.png)
+
+![Quizzes Index Page](./app/assets/images/Screen2.png)
+
+![Quiz Show](./app/assets/images/Screen4.png)
+
+![Quiz Results Show](./app/assets/images/Screen5.png)
 
 ## Acknowledgments
 
