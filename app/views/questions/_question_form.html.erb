@@ -61,9 +61,9 @@
           <%= link_to("Cancel",  quiz_path(@quiz), class: "btn btn-secondary m-2")%>
         <% end %>
         </div>
-        <% if @quiz.persisted? %>
+        <% if @question.persisted? %>
           <div class="ml-auto">
-            <%= link_to('Delete', quiz_path(@quiz), method: :delete, class: " m-2 btn btn-info", data: {confirm: "Are you sure?"}) %>
+            <%= link_to('Delete', quiz_question_path(@quiz, @question), method: :delete, class: " m-2 btn btn-info", data: {confirm: "Are you sure?"}) %>
           </div>
         <% end %>
       </div> 

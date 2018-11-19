@@ -1,19 +1,17 @@
 
 <h1 class="text-center text-primary">QuizzBuzz!</h1>
 <div class="text-center">
-<%= image_tag "quiz#{rand(4)}.png", height: "100em" %>
 </div>
 <div class="card border border-dark">
   <div class="card-body">
     <h3 class="text-center card-title text-dark"><%= @quiz.title %></h3>
     <p class="text-center card-text text-dark m-0"><%= @quiz.description %></p>
-    <div class="mb-5 text-center">
+    <div class="text-center mb-2">
       <em><small class="card-text text-dark">By: <%= @quiz.user.nickname %></small></em>
     </div>
     <% if can? :crud, @quiz %>
       <div class="form-group ml-2 mt-2 justify-content-center d-flex">
         <%= link_to('Edit Quiz', edit_quiz_path(@quiz), class: "mx-1 btn btn-outline-primary btn-sm")%>
-        <%= link_to('Delete Quiz', quiz_path(@quiz), method: :delete, class: "mx-1 btn btn-outline-primary btn-sm", data: {confirm: "Are you sure?"}) %>
       </div>
     <% end %>
     <form action="/quizzes/<%= @quiz.id %>/results" method="POST">
@@ -42,7 +40,6 @@
             <% if can? :crud, @quiz %>
               <div class="mt-2">
                 <%= link_to('Edit', edit_quiz_question_path(@quiz, q), class: "btn btn-outline-primary bg-light")%>
-                <%= link_to('Delete', quiz_question_path(@quiz, q), method: :delete, class: "btn btn-outline-primary bg-light", data: {confirm: "Are you sure?"}) %>
               </div>
             <% end %>  
           </div>
