@@ -1,10 +1,33 @@
 <% if can?(:crud, @result) %>
   <% if @result.user == current_user %>
-    <h1>Result</h1>
-    <p>Your Result: <%= @result.score %>/<%= @max_score %></p>
-    <p><%= ((@result.score.to_f/@max_score.to_f) * 100).round(2) %>%</p>
-    <p>Points Earned: <%=@result.score%></p>
-    <p>Total Leaderboard Points: <%=@leaderboard_score%></p>
+  <div class="card text-dark shadow p-5 text-center" style="max-width: 400px; margin: auto">
+    <div class="card-body border border-dark pb-2">
+    <%= image_tag 'honey', height: "120px", class:"mb-4" %>
+      <h1 class="card-title text-primary">Result!</h1>
+      <p class="card-text m-0">Your Result:</p>
+      <div class="d-flex justify-content-center text-secondary">
+        <h1 class="m-0 card-text count"><%= ((@result.score.to_f/@max_score.to_f) * 100).round(2) %></h1>
+        <h1 class="m-0">%</h1>
+      </div>
+      <small> <%= @result.score %>/<%= @max_score %> Correct</small>
+      <h5 class="card-text m-0">Points Earned: <%=@result.score%></h5>
+      <h5 class="card-text">Total Quizz Points: <%=@leaderboard_score%></h5>
+      <%= link_to 'Back', quizzes_path, class:"btn btn-primary btn-sm m-0" %>
+    </div>
+  </div>
+  <script>
+    $('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 1000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(now.toFixed(2));
+        }
+    });
+    });
+  </script>
   <% else %>
     <% flash.now[:danger] = "You cannot view this page!" %>
   <% end %>
