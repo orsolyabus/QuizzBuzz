@@ -42,14 +42,36 @@ $theme-colors: (
 );
 
 #quiz-index .card {
-  height: 197px;
+  height: 220px;
 }
 
 #quiz-index .card-header {
-  height: 80px;
+  height: 100px;
 }
 
 #quiz-index .card-title {
+  text-align: center;
+}
+#quiz-completed .card {
+  height: 220px;
+}
+
+#quiz-completed .card-header {
+  height: 100px;
+}
+
+#quiz-completed .card-title {
+  text-align: center;
+}
+#quiz-created .card {
+  height: 220px;
+}
+
+#quiz-created .card-header {
+  height: 100px;
+}
+
+#quiz-created .card-title {
   text-align: center;
 }
 
@@ -65,5 +87,9 @@ nav a:hover {
   color: pink;
 }
 
- @import "bootstrap";
- @import "main";
+.navbar-brand > img {
+  max-height: 40px;
+}
+
+@import "bootstrap";
+@import "main";

@@ -53,7 +53,7 @@ class QuizzesController < ApplicationController
 
   def destroy
     @quiz.destroy
-    redirect_to quizzes_path
+    redirect_to created_quizzes_path(current_user)
   end
 
   private

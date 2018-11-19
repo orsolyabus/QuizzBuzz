@@ -37,7 +37,8 @@ class UsersController < ApplicationController
 
   def destroy
       @user.destroy 
-      redirect_to root_path, notice: "See you next time!"
+      flash[:success] = "See you next time!"
+      redirect_to root_path
   end 
 
   def completed_quizzes

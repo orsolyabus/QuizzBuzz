@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(version: 2018_11_18_222509) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
-    t.string "current_password"
   end
 
   add_foreign_key "questions", "quizzes"

@@ -8,5 +8,5 @@ class Quiz < ApplicationRecord
                     uniqueness: true,
                     length: { maximum: 60}
   validates :description, presence: true,
-                          length: { minimum: 20 }
+                          length: { minimum: 20, maximum: 300 }
 end
