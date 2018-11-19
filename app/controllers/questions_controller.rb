@@ -15,6 +15,9 @@ class QuestionsController < ApplicationController
             flash[:success] = "Question made!"
             redirect_to quiz_path(@quiz)
         else
+            if @question.errors
+                flash.now[:danger] = @question.errors.full_messages.join(", ")
+            end
             render :new
         end
     end

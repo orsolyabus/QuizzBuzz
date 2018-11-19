@@ -23,19 +23,19 @@
           <div class="card-body m-0 form-group" id='answer-options'>
             <h5 class="card-text"><%= q.question %></h5>
             <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">          
-            <div class="form-row ml-2">
+            <div class="d-flex ml-2">
               <input class="m-1" type="radio" id="opt0-<%=q.id%>" name='<%= q.id %>' value=0 required>
               <label class="form-check-label ml-4 " for="opt0-<%=q.id%>"><%= q.option0 %></label>
             </div>
-            <div class="form-row ml-2">
+            <div class="d-flex ml-2">
               <input class="m-1" type="radio" id="opt1-<%=q.id%>" name='<%= q.id %>' value=1>
               <label class="form-check-label ml-4" for="opt1-<%=q.id%>"><%= q.option1 %></label>
             </div>
-            <div class="form-row ml-2">
+            <div class="d-flex ml-2">
               <input class="m-1" type="radio" id="opt2-<%=q.id%>" name='<%= q.id %>' value=2'>
               <label class="form-check-label ml-4" for="opt2-<%=q.id%>"><%= q.option2 %></label>
             </div>
-            <div class="form-row ml-2">
+            <div class="d-flex ml-2">
               <input class="m-1" type="radio" id="opt3-<%=q.id%>" name='<%= q.id %>' value=3'>
               <label class="form-check-label ml-4" for="opt3-<%=q.id%>"><%= q.option3 %></label>
             </div>
