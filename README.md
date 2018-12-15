@@ -37,7 +37,7 @@ Ruby on Rails
 - [Daniel Hawkins](https://github.com/dockhands)
 - [Nicholas Chan](https://github.com/LeoBotti)
 - [Ronald Liu](https://github.com/rkkl1337)
-- [Orsolya Torokne Bus](https://github.com/orsolyabus)
+- [Orsolya Torokne Bus](https://github.com/orsolyabus) Project Manager
 - [Chris Chu](https://github.com/chrischu5)
 
 ## Screenshots
